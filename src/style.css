@@ -1,3 +1,33 @@
-.hello {
-  color: red;
+:root {
+  --nav_bar-color: #ffe4c4;
+}
+
+.nav_bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  padding: 10px 0;
+  background-color: var(--nav_bar-color);
+}
+
+.logo_img {
+  height: 50px;
+}
+
+.links_items {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  font-size: 25px;
+  text-align: end;
+  cursor: pointer;
+}
+
+.food_footer {
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  font-size: 20px;
+  text-align: center;
 }
