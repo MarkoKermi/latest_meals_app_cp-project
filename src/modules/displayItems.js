@@ -1,16 +1,17 @@
-import { getMeal } from "./mealApi";
-const cardsContainer = document.querySelector(".meal-cards");
+import getMeal from './mealApi.js';
+
+const cardsContainer = document.querySelector('.meal-cards');
 
 const renderMeal = async () => {
-  cardsContainer.innerHTML = "";
+  cardsContainer.innerHTML = '';
   const result = await getMeal();
   result.categories.forEach((res, index) => {
     const html = `
     <div class="card">
         <div class="img">
           <img src="${
-            res.strCategoryThumb
-          }" alt="honey" width="200" height="150" />
+  res.strCategoryThumb
+}" alt="honey" width="200" height="150" />
         </div>
         <div class="name">${res.strCategory}</div>
         <div class="like"></div>
@@ -24,4 +25,4 @@ const renderMeal = async () => {
   });
 };
 
-export { renderMeal };
+export default renderMeal;
