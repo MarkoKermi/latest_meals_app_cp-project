@@ -1,6 +1,6 @@
-import "./style.css";
-import { renderMeal } from "./modules/displayItems";
+import './style.css';
+import renderMeal from './modules/displayItems.js';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   renderMeal();
 });
