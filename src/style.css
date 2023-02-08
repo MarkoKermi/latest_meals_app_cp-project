@@ -92,7 +92,7 @@ body {
 .food_footer {
   bottom: 0;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   font-size: 20px;
   text-align: center;
 }
