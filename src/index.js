@@ -1,6 +1,5 @@
-import './style.css';
-import renderMeal from './modules/displayItems.js';
+import "./style.css";
+import Api from "./modules/mealApi.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-  renderMeal();
-});
+const api = new Api();
+api.getFood();

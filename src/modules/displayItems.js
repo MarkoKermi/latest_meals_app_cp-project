@@ -1,37 +1,4 @@
 import { modalWindow, Cards, ProductsCounter } from "./display.js";
-function DisplayCards(data) {
-  document.querySelector(".cards").innerHTML = "";
-  data.forEach((element) => {
-    Cards.innerHTML += `
-    
-<div class="a-box">
-<div class="img-container">
-  <div class="img-inner">
-    <div class="inner-skew">
-      <img src="${element.strCategoryThumb}">
-    </div>
-  </div>
-</div>
-<div class="text-container">
-  <h3>${element.strCategory}</h3>
-  <div>
-     ${element.strCategoryDescription.substr(0, 50)}...
-</div>
-<div class="interactions">
-            <div></div>       <div><i id="${
-              element.idCategory
-            }" class="fa-solid fa-heart fa-lg"></i> <b id="${
-      element.idCategory
-    }" class="likes-counter"></b> </div>
-            </div>
-<button id="${
-      element.idCategory
-    }" class="button comment"><i class="fa-solid fa-comments"></i> Comments</button>
-</div>
-         
-          `;
-  });
-}
 
 function DisplayPopup(data, examples) {
   modalWindow.innerHTML = ` <div class="closeBtn">X</div>
@@ -80,27 +47,62 @@ function DisplayPopup(data, examples) {
             </div>
         </div>
    </div>`;
-}
-const images = document.querySelector(".images");
-examples.meals.slice(0, 3).forEach((element) => {
-  const div = document.createElement("div");
-  div.classList.add("single-product-example");
-  div.innerHTML = ` 
+  const images = document.querySelector(".images");
+  examples.meals.slice(0, 3).forEach((element) => {
+    const div = document.createElement("div");
+    div.classList.add("single-product-example");
+    div.innerHTML = ` 
     <div class="img-popholdpop">
         <div class="imgex">
             <img src=${element.strMealThumb}>
+
         </div>
     </div>
     <p class="title-example">${element.strMeal.substr(0, 15)}</p>
 `;
-  images.appendChild(div);
-});
+    images.appendChild(div);
+  });
 
-const closeBtn = document.querySelector(".closeBtn");
+  const closeBtn = document.querySelector(".closeBtn");
 
-closeBtn.addEventListener("click", () => {
-  modalWindow.style.display = "none";
-});
+  closeBtn.addEventListener("click", () => {
+    modalWindow.style.display = "none";
+  });
+}
+
+function DisplayCards(data) {
+  document.querySelector(".cards").innerHTML = "";
+  data.forEach((element) => {
+    Cards.innerHTML += `
+    
+<div class="a-box">
+<div class="img-container">
+  <div class="img-inner">
+    <div class="inner-skew">
+      <img src="${element.strCategoryThumb}">
+    </div>
+  </div>
+</div>
+<div class="text-container">
+  <h3>${element.strCategory}</h3>
+  <div>
+     ${element.strCategoryDescription.substr(0, 50)}...
+</div>
+<div class="interactions">
+            <div></div>       <div><i id="${
+              element.idCategory
+            }" class="fa-solid fa-heart fa-lg"></i> <b id="${
+      element.idCategory
+    }" class="likes-counter"></b> </div>
+            </div>
+<button id="${
+      element.idCategory
+    }" class="button comment"><i class="fa-solid fa-comments"></i> Comments</button>
+</div>
+         
+          `;
+  });
+}
 
 function sumComment(data) {
   const msg = `Total Comments(${data.length})`;
