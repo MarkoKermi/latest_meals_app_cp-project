@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --nav_bar-color: #ffe4c4;
 }
@@ -67,6 +68,7 @@ body {
   color: gray;
   border: 2px solid gray;
 }
+
 .nav_bar {
   display: flex;
   justify-content: space-around;
@@ -92,6 +94,7 @@ body {
 .food_footer {
   bottom: 0;
   width: 100%;
+
   /* position: fixed; */
   font-size: 20px;
   text-align: center;
