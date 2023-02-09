@@ -1,28 +1,33 @@
-import getMeal from './mealApi.js';
-
-const cardsContainer = document.querySelector('.meal-cards');
-
-const renderMeal = async () => {
-  cardsContainer.innerHTML = '';
-  const result = await getMeal();
-  result.categories.forEach((res, index) => {
-    const html = `
-    <div class="card">
-        <div class="img">
-          <img src="${
-  res.strCategoryThumb
-}" alt="honey" width="200" height="150" />
-        </div>
-        <div class="name">${res.strCategory}</div>
-        <div class="like"></div>
-        <div class="description">
-        ${res.strCategoryDescription.substr(0, 30)}...
-        </div>
-        <button class="card-btn" id="${index}">Comments</button>
-      </div>`;
-
-    cardsContainer.innerHTML += html;
+function DisplayCards(data) {
+  document.querySelector(".cards").innerHTML = "";
+  data.forEach((element) => {
+    Cards.innerHTML += `
+    
+<div class="a-box">
+<div class="img-container">
+  <div class="img-inner">
+    <div class="inner-skew">
+      <img src="${element.strCategoryThumb}">
+    </div>
+  </div>
+</div>
+<div class="text-container">
+  <h3>${element.strCategory}</h3>
+  <div>
+     ${element.strCategoryDescription.substr(0, 50)}...
+</div>
+<div class="interactions">
+            <div></div>       <div><i id="${
+              element.idCategory
+            }" class="fa-solid fa-heart fa-lg"></i> <b id="${
+      element.idCategory
+    }" class="likes-counter"></b> </div>
+            </div>
+<button id="${
+      element.idCategory
+    }" class="button comment"><i class="fa-solid fa-comments"></i> Comments</button>
+</div>
+         
+          `;
   });
-};
-
-export default renderMeal;
+}
