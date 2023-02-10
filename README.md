@@ -1,4 +1,3 @@
-
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [Latest Meals App] <a name="about-project"></a>
@@ -14,6 +13,7 @@
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
+
 1. Clone the Repo or Download the Zip file or `https://github.com/MarkoKermi/capstone_project_kanban.git`
 2. cd /leaderboard
 3. Open it with the live server
@@ -27,8 +27,10 @@ In order to run this project you need:
 - VS code or any other equivalent tool.
 
  <!-- LIVE DEMO -->
- ### LIVE DEMO
- - See it live by clicking [Live Demo Link](https://sammy3000.github.io/leaderboard-API/dist/)
+
+### LIVE DEMO
+
+- See it live by clicking [Live Demo Link](https://markokermi.github.io/capstone_project_kanban/dist/)
 
 ### Setup
 
@@ -90,10 +92,9 @@ And For tracking linter errors in JavaScript files run:
 
 👤 **Marko Kermi**
 
-- GitHub: [@sam](https://github.com/Sammy3000)
-- Twitter: [@towettsam](https://twitter.com/sammy15375658)
-- LinkedIn: [@towettSammy](https://www.linkedin.com/in/towett-sammy-43476024a/)
-
+- GitHub: [@MarkoKerm](https://github.com/MarkoKermi)
+- Twitter: [@MarkoKermi](https://twitter.com/MarkoKerm)
+- LinkedIn: [@MarkoKermichiev](https://www.linkedin.com/in/marko-kermichiev-78b1bb110/)
 
 <!-- CONTRIBUTING -->
 
