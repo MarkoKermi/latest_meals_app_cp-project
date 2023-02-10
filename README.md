@@ -64,9 +64,6 @@ After you're finished please remove all the comments and instructions!
 
 -Latest Meals app displays several different meals offered in local restaurants. User can comment about the mean and can even leave a like if impressed with the meal.
 
-**[your_project__name]** is a...
-
-
 ## 🛠 Built With <a name="built-with"></a>
 
 - HTML
@@ -186,6 +183,13 @@ Give a ⭐️ if you like this project!
 - Thanks to My coding Partner.
 - Thanks to My Morning-session-group and Standup-team Partners.
 - Thanks to Code Reviewers
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ Loaders] **[I will add loaders as we await data from API]**
+
 
 ## 📝 License <a name="license"></a>
 
