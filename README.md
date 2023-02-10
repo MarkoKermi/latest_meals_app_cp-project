@@ -14,7 +14,7 @@
 
 To get a local copy up and running, follow these steps.
 
-1. Clone the Repo or Download the Zip file or `https://github.com/MarkoKermi/capstone_project_kanban.git`
+1. Clone the Repo or Download the Zip file or `https://github.com/MarkoKermi/javascript_capstone_project.git`
 2. cd /leaderboard
 3. Open it with the live server
 
@@ -49,7 +49,7 @@ Example commands:
 
 Install this project with:
 
-- to install locally run git clone https://github.com/MarkoKermi/capstone_project_kanban.git
+- to install locally run git clone https://github.com/MarkoKermi/javascript_capstone_project.git
 - open the cloned directory with VSCode
 - Install live server extension for VSCode
 - Right click on the index.html and select open with live servers
