@@ -5,15 +5,14 @@ import {
   CountLike,
   DisplayPopup,
   DisplayCards,
-} from "./displayItems.js";
-import { modalWindow } from "./display.js";
+} from './displayItems.js';
+import { modalWindow } from './display.js';
 
 class Api {
   constructor() {
-    this.InvolvementApi =
-      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/";
-    this.InvolvementAppID = "ursbnkAXppy56CPcJl5T";
-    this.FreeMealEP = "https://www.themealdb.com/api/json/v1/";
+    this.InvolvementApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
+    this.InvolvementAppID = 'ursbnkAXppy56CPcJl5T';
+    this.FreeMealEP = 'https://www.themealdb.com/api/json/v1/';
   }
 
   GetMealInfos = async (id) => {
@@ -36,13 +35,13 @@ class Api {
         this.CountComments(item.idCategory);
         this.displayAcomment(item.idCategory);
 
-        const form = document.querySelector(".form");
-        form.addEventListener("submit", (e) => {
+        const form = document.querySelector('.form');
+        form.addEventListener('submit', (e) => {
           e.preventDefault();
-          const username = document.getElementById("name").value;
+          const username = document.getElementById('name').value;
 
-          const comment = document.querySelector("#comment").value;
-          const button = document.querySelector(".submit").id;
+          const comment = document.querySelector('#comment').value;
+          const button = document.querySelector('.submit').id;
           if (username && comment) {
             const newComment = {
               username,
@@ -66,12 +65,12 @@ class Api {
       .then((json) => {
         DisplayCards(json.categories);
         this.GetStats(json.categories);
-        const likeBtn = document.querySelectorAll(".fa-heart");
-        const likeCount = document.querySelectorAll(".likes-counter");
+        const likeBtn = document.querySelectorAll('.fa-heart');
+        const likeCount = document.querySelectorAll('.likes-counter');
         likeBtn.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            if (!btn.classList.contains("liked")) {
-              btn.classList.add("liked");
+          btn.addEventListener('click', () => {
+            if (!btn.classList.contains('liked')) {
+              btn.classList.add('liked');
               likeCount.forEach((count) => {
                 if (count.id === btn.id) {
                   this.AddLike(count.id);
@@ -81,10 +80,10 @@ class Api {
             }
           });
         });
-        const comment = document.querySelectorAll(".comment");
+        const comment = document.querySelectorAll('.comment');
         comment.forEach((item) => {
-          item.addEventListener("click", () => {
-            modalWindow.classList.toggle("hide");
+          item.addEventListener('click', () => {
+            modalWindow.classList.toggle('hide');
             this.GetMealInfos(item.id);
           });
         });
@@ -92,50 +91,50 @@ class Api {
   };
 
   AddComment = async (data) => {
-    document.getElementById("name").setAttribute("disabled", "");
-    document.querySelector("#comment").setAttribute("disabled", "");
+    document.getElementById('name').setAttribute('disabled', '');
+    document.querySelector('#comment').setAttribute('disabled', '');
 
     await fetch(
       `${this.InvolvementApi}apps/${this.InvolvementAppID}/comments`,
       {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify(data),
         headers: {
-          "Content-type": "application/json; charset=UTF-8",
+          'Content-type': 'application/json; charset=UTF-8',
         },
-      }
+      },
     ).then(() => {
-      document.getElementById("name").removeAttribute("disabled");
-      document.querySelector("#comment").removeAttribute("disabled");
-      document.querySelector(".submit").innerHTML = "submit";
+      document.getElementById('name').removeAttribute('disabled');
+      document.querySelector('#comment').removeAttribute('disabled');
+      document.querySelector('.submit').innerHTML = 'submit';
     });
     this.displayAcomment(data.item_id);
   };
 
   displayAcomment = async (data) => {
-    const CommentList = document.querySelector(".comments");
+    const CommentList = document.querySelector('.comments');
     CommentList.innerHTML = ' <i class="fas fa-spinner fa-spin fa-2x"></i>';
     await fetch(
-      `${this.InvolvementApi}apps/${this.InvolvementAppID}/comments?item_id=${data}`
+      `${this.InvolvementApi}apps/${this.InvolvementAppID}/comments?item_id=${data}`,
     )
       .then((response) => response.json())
       .then((json) => {
         if (json.constructor === Array) {
           DisplayComments(json);
         } else {
-          CommentList.innerHTML = "";
+          CommentList.innerHTML = '';
         }
       });
   };
 
   AddLike = async (id) => {
     await fetch(`${this.InvolvementApi}apps/${this.InvolvementAppID}/likes/`, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         item_id: id,
       }),
       headers: {
-        "Content-type": "application/json; charset=UTF-8",
+        'Content-type': 'application/json; charset=UTF-8',
       },
     });
   };
@@ -152,7 +151,7 @@ class Api {
 
   CountComments = async (data) => {
     await fetch(
-      `${this.InvolvementApi}apps/${this.InvolvementAppID}/comments?item_id=${data}`
+      `${this.InvolvementApi}apps/${this.InvolvementAppID}/comments?item_id=${data}`,
     )
       .then((response) => response.json())
       .then((json) => {

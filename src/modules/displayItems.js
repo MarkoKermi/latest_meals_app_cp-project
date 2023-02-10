@@ -1,4 +1,4 @@
-import { modalWindow, Cards, ProductsCounter } from "./display.js";
+import { modalWindow, Cards, ProductsCounter } from './display.js';
 
 function DisplayPopup(data, examples) {
   modalWindow.innerHTML = ` <div class="closeBtn">X</div>
@@ -47,10 +47,10 @@ function DisplayPopup(data, examples) {
             </div>
         </div>
    </div>`;
-  const images = document.querySelector(".images");
+  const images = document.querySelector('.images');
   examples.meals.slice(0, 3).forEach((element) => {
-    const div = document.createElement("div");
-    div.classList.add("single-product-example");
+    const div = document.createElement('div');
+    div.classList.add('single-product-example');
     div.innerHTML = ` 
     <div class="img-popholdpop">
         <div class="imgex">
@@ -63,15 +63,15 @@ function DisplayPopup(data, examples) {
     images.appendChild(div);
   });
 
-  const closeBtn = document.querySelector(".closeBtn");
+  const closeBtn = document.querySelector('.closeBtn');
 
-  closeBtn.addEventListener("click", () => {
-    modalWindow.style.display = "none";
+  closeBtn.addEventListener('click', () => {
+    modalWindow.style.display = 'none';
   });
 }
 
 function DisplayCards(data) {
-  document.querySelector(".cards").innerHTML = "";
+  document.querySelector('.cards').innerHTML = '';
   data.forEach((element) => {
     Cards.innerHTML += `
     
@@ -90,14 +90,14 @@ function DisplayCards(data) {
 </div>
 <div class="interactions">
             <div></div>       <div><i id="${
-              element.idCategory
-            }" class="fa-solid fa-heart fa-lg"></i> <b id="${
-      element.idCategory
-    }" class="likes-counter"></b> </div>
+  element.idCategory
+}" class="fa-solid fa-heart fa-lg"></i> <b id="${
+  element.idCategory
+}" class="likes-counter"></b> </div>
             </div>
 <button id="${
-      element.idCategory
-    }" class="button comment"><i class="fa-solid fa-comments"></i> Comments</button>
+  element.idCategory
+}" class="button comment"><i class="fa-solid fa-comments"></i> Comments</button>
 </div>
          
           `;
@@ -110,13 +110,13 @@ function sumComment(data) {
 }
 
 function CountComment(data) {
-  const CommentCounter = document.querySelector(".Comment-counter");
+  const CommentCounter = document.querySelector('.Comment-counter');
   CommentCounter.innerHTML = sumComment(data);
 }
 
 function DisplayComments(data) {
-  const commentSection = document.querySelector(".comments");
-  let comment = "";
+  const commentSection = document.querySelector('.comments');
+  let comment = '';
   data.forEach((item) => {
     comment += `<li class="single-comment">
       
@@ -136,7 +136,7 @@ function Counter(data) {
 }
 
 function CountLike(data) {
-  const likeCount = document.querySelectorAll(".likes-counter");
+  const likeCount = document.querySelectorAll('.likes-counter');
   likeCount.forEach((item) => {
     data.forEach((likes) => {
       if (item.id === likes.item_id) {
