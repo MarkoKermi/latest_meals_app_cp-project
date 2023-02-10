@@ -10,10 +10,6 @@
 - CSS
 - Javascript
 
-## 🚀 VIDEO WALKTHROUGH <a name="live-demo"></a>
-
-- [Walkthrough link](https://drive.google.com/file/d/1htfMwT_eBf42EtfQewOEaoj4mQ-4HOjg/view?usp=share_link)
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
