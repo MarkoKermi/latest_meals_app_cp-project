@@ -30,7 +30,7 @@ In order to run this project you need:
 
 ### LIVE DEMO
 
-- See it live by clicking [Live Demo Link](https://markokermi.github.io/capstone_project_kanban/dist/)
+- See it live by clicking [Live Demo Link](https://markokermi.github.io/javascript_capstone_project/dist/)
 
 ### Setup
 
